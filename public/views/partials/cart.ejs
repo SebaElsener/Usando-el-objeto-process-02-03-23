@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+    <head>
+
+        <%- include('./head') %>
+        
+    </head>
+
+    <body>
+
+        <div class='cartsContainer'>
+
+            <div class='cartTitleAndDeleteBtn'>
+                <h2 class='cartH2'>Carrito</h2>
+                <a href='/api/productos' class='backLink'>Seguir comprando...</a>
+                <button class='deleteCartBtn'>Eliminar carrito</button>
+            </div>
+
+            <div class='cartProducts'>
+                <div class='products'>
+                    <% if (productsQty) { %>
+                        <% cart.productos.forEach(function(product) { %>
+                            <div class='productDiv'>
+                                <div class='productContainer'>
+                                    <p class='productContainerP'><span class='productContainerSpan'>Producto: </span><%= product.product %></p>
+                                    <p class='productContainerP'><span class='productContainerSpan'>Precio: </span>$<%= product.price %></p>
+                                    <p class='productContainerP'><span class='productContainerSpan'>Descripción: </span><%= product.description %></p>
+                                    <p class='productContainerP'><span class='productContainerSpan'>Stock: </span><%= product.stock %></p>
+                                </div>
+                                <div class='thumbnailContainer'>
+                                    <img class='thumbnail thumbnailImg' src='<%= product.thumbnail %>' alt='imagen producto' width='60px'>
+                                </div>
+                                <div class='deleteProductBtnContainer'>
+                                    <button class='deleteProductBtn' id='<%= product._id %>'>Eliminar</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <div class='emptyCartContainer'>
+                            <p class='emptyCart'>Carrito vacío</p>
+                            <a href='/api/productos' class='buyProductLink'>Ir a comprar</a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+
+        </div>
+
+        <script src='/js/cartLogic.js'></script>
+
+    </body>
+
+</html>

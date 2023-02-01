@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <%- include('./partials/head') %>
+        
+    </head>
+
+    <body>
+
+        <main id='main'>
+            
+            <%- include('./partials/form') %>
+
+            <section id='cartsSection'>
+                <a class='cartLink' href='/api/carrito'>CARRITO</a>
+                <span class='cartLinkSpan'></span>
+            </section>
+
+            <%- include('./partials/cards') %>
+
+        </main>
+
+        <script src="/js/main.js"></script>
+
+    </body>
+
+</html>

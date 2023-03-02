@@ -9,9 +9,11 @@ const administrador = true
 
 // Renderiza todos los productos y el form de nuevos ingresos
 routeProducts.get('/', async (req, res) => {
+    const userName = req.session.passport.user.user
     const productsList = await DAOproducts.getAll()
     res.render('index', {
         admin: administrador,
+        userName: userName,
         allProducts: productsList,
         productsQty: productsList.length
     })

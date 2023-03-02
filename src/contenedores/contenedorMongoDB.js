@@ -1,7 +1,10 @@
 
-import mongoose from "mongoose" 
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 
-mongoose.connect('mongodb+srv://slelsener:Renault9TS@cluster0.3u8bh3x.mongodb.net/?retryWrites=true&w=majority',
+dotenv.config()
+
+mongoose.connect(process.env.MONGOURI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -20,11 +23,12 @@ class ContenedorMongoDB {
         this.newModel = mongoose.model(collection, newSchema)
     }
 
-    //  Métodos comunes productos y carrito    
-    //  Traer todos los productos o carritos
+    //  Métodos comunes productos, carrito, usuarios o mensajes
+    //  Traer todos los productos, carritos, usuarios o mensajes
     async getAll() {
         try {
-            return await this.newModel.find().then(res => { return res })
+            //return await this.newModel.find().then(res => { return res })
+            return await this.newModel.find().lean()
         } catch (error) {
             console.log('Error al leer la base de datos', error)
         }
@@ -113,6 +117,30 @@ class ContenedorMongoDB {
             return updatedCart
         } catch (error) {
             console.log(`Error al escribir en base de datos, ${error}`)
+        }
+    }
+
+    //////////////////////////////////////
+    ////////  Métodos usuarios  //////////
+    //////////////////////////////////////
+
+    async save (item) {
+        try {
+            return await this.newModel(item).save().then(res => { return JSON.stringify(res) })
+        } catch (error) {
+            console.log(`Error al escribir en base de datos, ${error}`)
+        }
+    }
+
+    async getByUser (username) {
+        try {
+            const matchedUser = await this.newModel.findOne({ user: username })
+            if (matchedUser == null) {
+                return undefined
+            }
+            return matchedUser
+        } catch (error) {
+            console.log(`El usuario ya existe, ${error}`)
         }
     }
 

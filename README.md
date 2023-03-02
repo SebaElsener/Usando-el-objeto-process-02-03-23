@@ -1,12 +1,15 @@
-# Segunda entrega del proyecto final backend
+# Usando el objeto process
 
-Se reemplazó el sistema de persistencia local que hacía uso de *'fs'* para adaptarlo a *Firebase* y *mongoDB*, conservando las mismas funcionalidades.
+## Claves y credenciales
+Se pasaron a un archivo .env ubicado en la raíz del proyecto, estas son cargadas usando la librería *dotenv*
 
-* Para testear se conservó la interfaz de frontend con dos rutas principales, *'/api/productos'* y *'/api/carrito'* ya utilizada en la primer entrega del proyecto final, y además se probó mediante *Postman*.
+## Puerto de escucha del servidor
+Es pasado a través de la línea de comando haciendo uso de *yargs* con el alias "-p", por defecto es 8080
 
-* En el archivo *config.js* se encuentran los medios para cambiar de persistencia a través del valor de la constante *persistenceMethod*, que son importados por los DAO.  Asimismo, en *config.js* se instancian las distintas persistencias.
+## Ruta /api/info
+Muestra en pantalla información acerca de process
 
-## Comentarios
-Para probar la app se agregaron tanto a *Firebase* como a *mongoDB* tres productos y un carrito con *id=63d99bf8866138633a761063* para poder hacer las operaciones de agregar/eliminar productos.
+## Ruta /api/random
+A través de una función, calcula números random entre 1 y 1000, la cantidad se pasa por query params o calcula 500000 si no se le pasa ningún parámetro.  Es una ruta no bloqueante, implementada utilizando el método *fork* de *child process*, renderiza en el frontend una tabla con cada número random y la cantidad de veces que se repite.
 
-### Link al repositorio en GitHub:  
+## Link al live deploy en *Render.com*:  

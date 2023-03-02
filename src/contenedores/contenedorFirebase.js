@@ -1,5 +1,4 @@
 
-//import * as admin from 'firebase-admin'
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url)
 const serviceAccount = require('../../config/coder-test-67523-firebase-adminsdk-w5t74-8bca7fec93.json')

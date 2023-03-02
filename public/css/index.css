@@ -1,8 +1,6 @@
 
 * {
     font-family: sans-serif;
-    margin: 0px auto;
-    text-align: center;
 }
 
 body {
@@ -11,7 +9,7 @@ body {
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: rgba(222, 235, 253, 0.726);
+    background-color:  rgb(240, 244, 249);
 }
 
 h2,
@@ -23,14 +21,6 @@ h2,
 
 .h2ProductsList {
     margin-bottom: 20px;
-}
-
-#productsForm {
-    background-color: rgba(45, 87, 153, 0.921);
-    width: 830px;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 0px auto;
 }
 
 .product,
@@ -96,18 +86,26 @@ label {
     flex-wrap: wrap;
     gap: 10px;
     padding: 25px;
+    justify-content: center;
 }
 
 .thumbContainer {
-    width: 80px;
+    width: 100%;
     display: flex;
+    justify-content: center;
 }
 
-.thumbnail {
-    width: 75%;
+.thumbnail,
+.thumbnailInput {
+    width: 30%;
     font-size: 1rem;
     border: none;
     padding: 5px;
+}
+
+.thumbnailInput {
+    width: 68%;
+    margin-left: 20px;
 }
 
 .thumbnailImg {
@@ -122,6 +120,7 @@ label {
     justify-content: space-around;
     background-color: #b8d2d7c7;
     padding: 25px;
+    text-align: center;
 }
 
 .productPriceStockCont,
@@ -159,6 +158,7 @@ label {
     font-size: 1rem;
     color: rgba(17, 17, 17, 0.841);
     margin: 8px 0px;
+    text-align: center;
 }
 
 .price {
@@ -315,6 +315,7 @@ p {
 
 #cartsSection {
     padding-top: 25px;
+    text-align: center;
 }
 
 .cartTitleAndDeleteBtn {
@@ -326,4 +327,285 @@ p {
 
 .cartH2 {
     margin: 0;
+}
+
+/* //////////// IMPORTADO DE MOCKS Y NORMALIZACION ////////////////// */
+
+h2 {
+    margin: 30px auto;
+    color: rgba(34, 34, 34, 0.879);
+}
+
+#productsForm {
+    background-color: rgba(98, 128, 174, 0.92);
+    width: 630px;
+    padding: 35px;
+    border-radius: 5px;
+    margin: 0px auto;
+}
+
+.price {
+    width: 80px;
+}
+
+label {
+    margin: 15px 0px;
+    background-color: transparent;
+    font-weight: bold;
+    color: whitesmoke
+}
+
+.sendBtn {
+    margin: 20px auto;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 150px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(184, 184, 184);
+    transition: all .2s;
+    font-weight: bold;
+    color: rgba(34, 34, 34, 0.879);
+}
+
+.sendBtn:hover {
+    box-shadow: 0px 0px 5px whitesmoke;
+}
+
+.prodsLink {
+    color: rgba(34, 34, 34, 0.879);
+    margin: 40px auto;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* /////////////////////////// */
+
+.prodsLink {
+    color: rgba(34, 34, 34, 0.879);
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+table {
+    padding: 20px;
+    min-width: 340px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+thead {
+    color: whitesmoke;
+    background-color: rgba(45, 87, 153, 0.921);
+}
+
+th {
+    padding: 8px;
+}
+
+td {
+    color: rgb(57, 57, 57);
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(119, 165, 240, 0.921);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(87, 143, 232, 0.921);
+}
+
+.thumbnailImg {
+    padding: 8px;
+}
+
+.userInfo {
+    text-align: center;
+}
+
+#MessagesCenter {
+    min-width: 865px;
+    margin: 0;
+}
+
+.msgAuthor {
+    display: inline-block;
+    text-align: right;
+    margin: 0px 10px;
+}
+
+.userImgContainer {
+    text-align: right;
+}
+
+.textContainer,
+.userDataContainer {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    margin: 0;
+}
+
+.userDataContainer {
+    justify-content: right;
+    flex-wrap: wrap;
+}
+
+#messagesDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #cacaca;
+}
+
+.msgBtn {
+    border: none;
+    background-color: gray;
+    padding: 5px;
+    width: 70px;
+    color: antiquewhite;
+    font-size: 1rem;
+}
+
+.userEmailLbl {
+    color: rgba(34, 34, 34, 0.879);
+    width: 75px;
+    display: inline-block;
+    text-align: right;
+}
+
+#messagesContainer {
+    margin: 30px auto;
+    width: 1000px;
+}
+
+#userEmail,
+.userEmail {
+    width: 320px;
+}
+
+#messagesForm {
+    margin: 25px auto;
+    text-align: center;
+}
+
+#messageContent,
+#userEmail,
+.userEmail {
+    padding: 5px;
+    width: 300px;
+    border: none;
+    margin: 20px;
+    font-size: 1rem;
+}
+
+.userTitle,
+.gotoLogin,
+.retryLogin {
+    color:rgb(10, 102, 130);
+    margin: 0;
+    padding: 20px;
+}
+
+.gotoLogin,
+.retryLogin {
+    font-size: 1.3rem;
+}
+
+#userContainer {
+    background-color: rgba(119, 165, 240, 0.921);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#loginForm,
+#regForm {
+    background-color: #c5dbee;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 310px;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 20px;
+}
+
+.userName,
+.userPass {
+    color: rgb(10, 102, 130);
+}
+
+.userNameInput,
+.userPassInput {
+    padding: 5px;
+    width: 300px;
+    border: none;
+    font-size: 1rem;
+}
+
+.formTitle {
+    text-align: center;
+}
+
+.loginFormTitle,
+.regFormTitle {
+    color: rgb(10, 102, 130);
+}
+
+.loginBtn,
+.logoutBtn,
+.regBtn {
+    margin-top: 25px;
+    border: none;
+    font-size: 1rem;
+    padding: 7px;
+    width: 100px;
+    color: #605f5f;
+    font-weight: bold;
+    background-color: #c8c8c8;
+    transition: all .3s;
+}
+
+.logoutBtn {
+    margin-top: 0;
+    margin-right: 20px;
+}
+
+.logoutLink {
+    text-decoration: none;
+    color: #605f5f;
+}
+
+.loginBtn:hover,
+.logoutBtn:hover,
+.regBtn:hover {
+    background-color: #ebd829;
+}
+
+.gotoRegisterContainer,
+.gotoLoginContainer {
+    margin: 20px;
+}
+
+.regContainerText,
+.loginContainerText {
+    display: inline-block;
+    margin-right: 10px;
+    color: #4f4f4f;
+}
+
+.infoTitle,
+.infoItem {
+    color: #4f4f4f;
+}
+
+.infoItem {
+    font-weight: 400;
 }

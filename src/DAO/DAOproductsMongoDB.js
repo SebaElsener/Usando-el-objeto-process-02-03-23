@@ -1,4 +1,4 @@
-import ContenedorMongoDB from "../contenedores/contenedorMongoDB.js"
+import ContenedorMongoDB from '../contenedores/contenedorMongoDB.js'
 
 const productSchema = 
     {

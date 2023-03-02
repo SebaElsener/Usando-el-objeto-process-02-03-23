@@ -1,16 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
     <head>
 
         <%- include('./partials/head') %>
+        <!-- Script normalizr -->
+        <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.2/dist/normalizr.browser.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
         
     </head>
 
     <body>
 
+        <div id="userContainer">
+            <h2 class="userTitle">Bienvenido <span class="userWelcome"><%= userName %></span></h2>
+            <button class="logoutBtn"><a class="logoutLink" href="/api/logout">Logout</a></button>
+        </div>
+
         <main id='main'>
-            
             <%- include('./partials/form') %>
 
             <section id='cartsSection'>
@@ -20,9 +28,12 @@
 
             <%- include('./partials/cards') %>
 
+            <%- include('./partials/messages') %>
+
         </main>
 
         <script src="/js/main.js"></script>
+        <script src="/js/socketLogic.js"></script>
 
     </body>
 
